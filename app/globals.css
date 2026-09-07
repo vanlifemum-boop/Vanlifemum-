@@ -18,3 +18,20 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* Sticker-card hover (effect from tussy-van-website) */
+.dest-card {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dest-card:hover {
+  transform: translateY(-5px) rotate(-0.5deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-card {
+    transition: none;
+  }
+  .dest-card:hover {
+    transform: none;
+  }
+}
