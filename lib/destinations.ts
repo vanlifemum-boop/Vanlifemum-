@@ -27,8 +27,6 @@ export interface Destination {
   stellplatz: string;
   zeit: string;
   tipp: string;
-  /** später: slugs verlinkter Blog-Beiträge (Reisen mit Kind) */
-  posts?: string[];
 }
 
 export const COUNTRIES: { key: CountryKey; label: string; flag: string }[] = [

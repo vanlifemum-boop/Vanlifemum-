@@ -42,9 +42,19 @@ export default function Home() {
         >
           Reiseziele entdecken →
         </Link>
-        <span className="text-sm text-white/50">
-          👩‍👧 Zu jedem Ziel folgt ein Beitrag „mit Kind“.
-        </span>
+        <Link
+          href="/blog"
+          className="rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+          style={{
+            background: theme.creme,
+            color: theme.ink,
+            border: `3px solid ${theme.ink}`,
+            boxShadow: theme.stickerShadow,
+            transitionTimingFunction: theme.ease,
+          }}
+        >
+          👩‍👧 Blog: mit Kind
+        </Link>
       </section>
 
       <footer className="pt-4 text-sm text-white/40">

@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { theme, headGradients } from "@/lib/theme";
 import type { Destination } from "@/lib/destinations";
+import { getPostsForDestination } from "@/lib/posts";
 
 /**
  * Sticker card (effect from tussy-van-website) in the WowMoman palette.
@@ -9,7 +11,7 @@ import type { Destination } from "@/lib/destinations";
  * upcoming "mit Kind" blog posts can point straight at a destination.
  */
 export default function DestinationCard({ dest }: { dest: Destination }) {
-  const hasPosts = !!dest.posts?.length;
+  const posts = getPostsForDestination(dest.slug);
 
   return (
     <article
@@ -64,11 +66,18 @@ export default function DestinationCard({ dest }: { dest: Destination }) {
           className="mt-auto border-t pt-3 text-[0.82rem] font-semibold"
           style={{ borderColor: theme.sand }}
         >
-          {hasPosts ? (
-            <span style={{ color: theme.magenta }}>
-              👩‍👧 {dest.posts!.length} Beitrag
-              {dest.posts!.length > 1 ? "e" : ""} mit Kind
-            </span>
+          {posts.length > 0 ? (
+            <div className="flex flex-col gap-1">
+              {posts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  style={{ color: theme.magenta }}
+                >
+                  👩‍👧 {post.title} →
+                </Link>
+              ))}
+            </div>
           ) : (
             <span style={{ color: theme.muted }}>
               👩‍👧 Beitrag „mit Kind“ folgt

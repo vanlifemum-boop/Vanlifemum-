@@ -31,13 +31,50 @@ framed preview.
 ```
 app/
   layout.tsx                  Root layout + metadata
-  page.tsx                    Renders the <Demo /> preview
+  page.tsx                    Startseite: Hero + Links zu Zielen und Blog
   globals.css                 Tailwind directives + base styles
+  ziele/page.tsx              Reiseziele mit Länderfilter
+  blog/page.tsx               Blog-Übersicht
+  blog/[slug]/page.tsx        Einzelner Beitrag
 components/
   Demo.tsx                    Fixed 800px frame that hosts the hero
+  DestinationCard.tsx         Sticker-Card für ein Reiseziel
   ui/
     scroll-morph-hero.tsx     IntroAnimation — the scroll-morph effect
+lib/
+  theme.ts                    Farbpalette (eine Quelle der Wahrheit)
+  destinations.ts             39 Reiseziele
+  posts.ts                    Blog-Beiträge
 ```
+
+## Inhalte pflegen
+
+**Reiseziel ändern/ergänzen** → `lib/destinations.ts`. Jedes Ziel braucht eine
+eindeutige `id` (wird automatisch zum `slug` und damit zum Anker `/ziele#<slug>`).
+
+**Blog-Beitrag anlegen** → Objekt in `POSTS` in `lib/posts.ts` eintragen:
+
+```ts
+{
+  slug: "kolberg-mit-kind",        // wird zu /blog/kolberg-mit-kind
+  title: "Kołobrzeg mit Kind",
+  date: "2026-07-14",              // ISO, sortiert die Übersicht
+  excerpt: "Kurzer Teaser für die Übersicht.",
+  destination: "kolberg",          // slug aus destinations.ts (optional)
+  readingMinutes: 6,               // optional
+  body: [
+    { type: "p", text: "Ein Absatz." },
+    { type: "h2", text: "Eine Zwischenüberschrift" },
+    { type: "list", items: ["Punkt eins", "Punkt zwei"] },
+    { type: "quote", text: "Ein Satz, der hängen bleibt." },
+  ],
+}
+```
+
+Sobald `destination` gesetzt ist, verlinken sich Ziel und Beitrag **automatisch in
+beide Richtungen**: die Ziel-Karte zeigt den Beitrag, der Beitrag verlinkt zurück
+auf `/ziele#<slug>`. Solange es zu einem Ziel keinen Beitrag gibt, steht dort
+„Beitrag ‚mit Kind' folgt".
 
 ## How it works
 
