@@ -43,7 +43,8 @@ export type Block =
   | { type: "image"; src: string; alt: string; caption?: string }
   | { type: "h2"; text: string }
   | { type: "quote"; text: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "links"; items: { label: string; href: string }[] };
 
 export interface BlogPost {
   slug: string;
@@ -62,6 +63,226 @@ export interface BlogPost {
 }
 
 export const POSTS: BlogPost[] = [
+  {
+    "slug": "breslau-zwergensuche-mit-kind",
+    "title": "Breslau mit Kind: Auf Zwergenjagd durch die Altstadt",
+    "date": "2026-09-11",
+    "excerpt": "Über tausend bronzene Zwerge verstecken sich in Breslaus Gassen. Mit Suchkarte und App wird daraus die beste Stadtführung, die ein Kind sich wünschen kann.",
+    "destination": "breslau",
+    "category": "reise",
+    "readingMinutes": 8,
+    "hero": {
+      "src": "/bilder/breslau-drei-zwerge.jpg",
+      "alt": "Kind in Löwenmütze zeigt auf drei bronzene Zwerge auf dem Kopfsteinpflaster der Breslauer Altstadt.",
+      "caption": "Einmal entdeckt, sieht man sie überall."
+    },
+    "body": [
+      {
+        "type": "p",
+        "text": "Es gibt Städte, die muss man mit einem Kind anders angehen. Breslau ist so eine. Denn hier lebt, versteckt zwischen Kopfsteinpflaster, Hauswänden und Blumenkübeln, ein ganzes Volk aus Bronze: die Zwerge. Auf Polnisch: krasnale. Sie sind kaum kniehoch, manche keine Handspanne groß — und sobald du den ersten entdeckt hast, siehst du plötzlich überall welche."
+      },
+      {
+        "type": "p",
+        "text": "Aus einem Stadtrundgang wird damit eine Schatzsuche. Und ein Kind, das in einer Altstadt nach zwanzig Minuten „wie weit noch?“ fragt, läuft auf einmal stundenlang mit gesenktem Blick durch die Gassen und ruft alle fünf Meter: „Da ist noch einer!“"
+      },
+      {
+        "type": "h2",
+        "text": "Warum überhaupt Zwerge?"
+      },
+      {
+        "type": "p",
+        "text": "Die Geschichte dahinter ist besser als jede Touristenattraktion. In den Nächten des 30. und 31. August 1982 malte Waldemar „Major“ Fydrych kleine Zwerge auf Breslauer Hauswände — genauer gesagt auf die Farbflecken, mit denen das kommunistische Regime regimekritische Parolen übermalt hatte. Seine Bewegung, die Pomarańczowa Alternatywa (Orange Alternative), machte sich mit absurdem Humor über das System lustig. Man kann Menschen für Parolen verhaften. Aber für Zwerge?"
+      },
+      {
+        "type": "p",
+        "text": "2001 wurde daraus Bronze: Am 1. Juni stellte die Stadt in der ulica Świdnicka den „Papa Krasnal“ auf, ein Denkmal für die Orange Alternative. Er war der erste. Seitdem sind unaufhörlich neue dazugekommen — gestiftet von Läden, Vereinen, Institutionen, jeder mit einer eigenen kleinen Geschichte."
+      },
+      {
+        "type": "quote",
+        "text": "Ein Kind muss die Diktatur nicht verstehen, um den Witz zu begreifen: Die Erwachsenen wollten etwas verbieten — und dann kamen die Zwerge."
+      },
+      {
+        "type": "h2",
+        "text": "Wie viele sind es?"
+      },
+      {
+        "type": "p",
+        "text": "Die ehrliche Antwort: Es werden ständig mehr. Anfang 2026 lag die Zahl im Stadtgebiet bei rund 1.040 Figuren. Vollständigkeit ist also kein realistisches Ziel — und genau das nimmt den Druck raus. Es geht nicht darum, alle zu finden. Es geht darum, den nächsten zu finden."
+      },
+      {
+        "type": "h2",
+        "text": "Karte aus Papier oder App? Wir hatten beides dabei"
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnale-fliegenpilze-karte.jpg",
+        "alt": "Kind mit gehäkelter Löwenmütze steht neben zwei großen roten Fliegenpilz-Figuren auf einem Weihnachtsmarkt und hält die Zwergen-Suchkarte in der Hand.",
+        "caption": "Die Ausrüstung: Löwenmütze, Suchkarte um den Hals, Tüte in der Hand. Startklar."
+      },
+      {
+        "type": "p",
+        "text": "Am Anfang steht die Ausrüstung, und die ist Teil des Spaßes. Es gibt eine gedruckte Suchkarte mit Stadtplan, Aufklebern und Stempelfeldern — für ungefähr 17 Złoty in den Läden und Buden der Altstadt. Um den Hals gehängt, ist sie Landkarte, Sammelalbum und Jägerausweis in einem. Für ein Kind schlägt dieses Stück Papier jede App, weil man etwas in der Hand hält, etwas einkleben und abhaken kann."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-blumenkuebel.jpg",
+        "alt": "Kind zeigt auf einen kleinen bronzenen Zwerg, der neben einem großen Blumenkübel vor einem Schaufenster sitzt; auf dem Rücken der Suchkarte ist der illustrierte Stadtplan zu sehen.",
+        "caption": "Rückseite der Karte: der illustrierte Altstadtplan. Vorne wird gestempelt, hinten navigiert."
+      },
+      {
+        "type": "p",
+        "text": "Praktisch schlauer ist trotzdem die App. Sie kennt über tausend Figuren, zeigt sie auf einer Karte samt Standort und macht per Geolocation ein Stadtspiel daraus — inklusive Zwergenerkennung per Foto und Punkten. Unser Rhythmus war: Die App sagt, in welche Gasse wir müssen. Das Kind findet den Zwerg. Die Papierkarte bekommt den Stempel."
+      },
+      {
+        "type": "links",
+        "items": [
+          {
+            "label": "Krasnal Wrocław — offizielle Karte & App (krasnalwroclaw.pl)",
+            "href": "https://www.krasnalwroclaw.pl/de"
+          },
+          {
+            "label": "„Breslau Zwerge: Karte“ im App Store",
+            "href": "https://apps.apple.com/de/app/breslau-zwerge-karte/id6752708842"
+          },
+          {
+            "label": "„Go Zwerge von Wrocław“ — kostenlose App der Stadt",
+            "href": "https://www.wroclaw.pl/de/go-zwerge-von-wroclaw-kostenlose-app"
+          },
+          {
+            "label": "Wromap — Liste und Karte aller Zwerge",
+            "href": "https://wromap.pl/de/"
+          }
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Die Zwerge, die wir gefunden haben"
+      },
+      {
+        "type": "p",
+        "text": "Jeder Zwerg hat einen Namen und einen Grund, warum er genau dort steht. Man muss die Namen nicht kennen — aber die Motive erzählen sich von selbst, und Kinder lesen sie sofort."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-drei-zwerge.jpg",
+        "alt": "Kind zeigt auf drei bronzene Zwerge, die in einer Reihe auf dem Kopfsteinpflaster vor einer Backsteinwand stehen; einer stützt sich auf einen Stock, einer schiebt einen Wagen.",
+        "caption": "Gleich drei auf einmal. Einer mit Gehstock, einer mit Wagen — jeder mit eigener Aufgabe."
+      },
+      {
+        "type": "p",
+        "text": "Manche stehen in Gruppen, als hätten sie gerade etwas zu besprechen. Andere findet man nur, wenn man wirklich langsam geht und in die Ecken schaut, in die Erwachsene nie schauen."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-becher.jpg",
+        "alt": "Kind zeigt auf einen bronzenen Zwerg, der mit einem Becher in der Hand an einer terrakottafarbenen Hauswand sitzt.",
+        "caption": "Sitzt gemütlich an der Wand, Becher in der Hand. Pause hat er sich verdient."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-wasserpumpe.jpg",
+        "alt": "Kind in Löwenmütze berührt einen bronzenen Zwerg, der auf einer alten grünen Wasserpumpe sitzt und ein Joch mit zwei Eimern über der Schulter trägt.",
+        "caption": "Der Wasserträger auf der alten Pumpe — mit Joch und zwei Eimern."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-kirchenmodell.jpg",
+        "alt": "Kind zeigt auf einen kleinen Zwerg am Fuß eines Steinsockels, auf dem ein bronzenes Modell einer gotischen Kirche steht.",
+        "caption": "Unter dem Bronzemodell der Kirche wohnt auch einer. Das Modell selbst ist zum Ertasten gedacht."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-an-der-wand.jpg",
+        "alt": "Kind zeigt auf einen bronzenen Zwerg, der an einer Steinwand befestigt ist und zu klettern scheint; darüber sitzt ein kleiner bronzener Vogel.",
+        "caption": "Nicht alle stehen am Boden: Dieser klettert die Wand hoch, mit Vogel als Begleitung."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-souvenirladen.jpg",
+        "alt": "Kind steht breitbeinig über einem bronzenen Zwerg auf dem Kopfsteinpflaster vor einem Souvenirladen mit bunten Lampen im Schaufenster.",
+        "caption": "Viele sitzen direkt vor den Läden, die sie gestiftet haben."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-postkartenstaender.jpg",
+        "alt": "Kind zeigt auf einen bronzenen Zwerg neben einem Ständer mit Magneten und Postkarten; auf den Magneten sind ebenfalls Zwerge abgebildet.",
+        "caption": "Zwerg vor dem Magnetständer — auf dem lauter Zwerge kleben."
+      },
+      {
+        "type": "p",
+        "text": "Unser Lieblingsfund hatte sogar eine eigene Landkarte unter den Füßen: WOTuś, ein Zwerg in Uniform mit Gewehr, der auf einer Bronzeplatte mit den Umrissen Niederschlesiens steht — Głogów, Wrocław, Wałbrzych sind eingraviert."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-wotus.jpg",
+        "alt": "Lachendes Kind in Löwenmütze steht neben dem Zwerg WOTuś, einer Uniformfigur mit Gewehr, am Fuß eines schwarzen Laternenmastes.",
+        "caption": "WOTuś — und die passende Reaktion darauf."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-krasnal-wotus-plakette.jpg",
+        "alt": "Nahaufnahme des Zwergs WOTuś auf einer Bronzeplatte mit der Umrisskarte Niederschlesiens und den Ortsnamen Głogów, Wrocław und Wałbrzych.",
+        "caption": "Unter ihm die Karte Niederschlesiens — Zwerg mit Zuständigkeitsgebiet."
+      },
+      {
+        "type": "h2",
+        "text": "Wenn zwischendurch die Konzentration nachlässt"
+      },
+      {
+        "type": "p",
+        "text": "Irgendwann ist auch der beste Zwergenjäger satt. Dann hilft, dass die Altstadt noch anderes zu bieten hat — und im Advent sowieso."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-wroclovek-fotowand.jpg",
+        "alt": "Kind steckt lachend den Kopf durch das Gesichtsloch einer bemalten Zwergen-Fotowand mit der Aufschrift WROCLOVEK.",
+        "caption": "Kurz selbst zum Zwerg werden."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-sklepik-magiczny.jpg",
+        "alt": "Kind steht von hinten vor dem Schaufenster des Ladens Sklepik Magiczny; im Fenster hängt ein Harry-Potter-Fahndungsplakat.",
+        "caption": "Der Zauberladen. Hier wollte jemand nicht mehr weiter."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-weihnachtsmarkt-fotoecke.jpg",
+        "alt": "Kind sitzt in einem alten Sessel in einer weihnachtlich dekorierten Fotoecke des Weihnachtsmarkts, daneben ein roter Briefkasten für Briefe an den Weihnachtsmann.",
+        "caption": "Thron mit Briefkasten für Wunschzettel."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-weihnachtsmarkt-selfie-pyramide.jpg",
+        "alt": "Selfie von Mutter mit pinker Mütze und Kind mit Löwenmütze auf dem Weihnachtsmarkt, dahinter eine beleuchtete Weihnachtspyramide und die Häuser des Marktplatzes.",
+        "caption": "Der Breslauer Weihnachtsmarkt liegt mitten auf dem Rynek — Zwergensuche und Glühwein in einem Radius von 200 Metern."
+      },
+      {
+        "type": "image",
+        "src": "/bilder/breslau-weihnachtsbaum-rynek.jpg",
+        "alt": "Selfie von Mutter und Kind vor dem großen geschmückten Weihnachtsbaum auf dem Breslauer Marktplatz mit den bunten Bürgerhäusern im Hintergrund.",
+        "caption": "Rynek mit Baum. Die bunten Giebelhäuser gibt es gratis dazu."
+      },
+      {
+        "type": "h2",
+        "text": "Was wir gelernt haben"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Karte UND App: Die App findet, die Papierkarte belohnt. Beides zusammen trägt einen ganzen Tag.",
+          "Kein Vollständigkeitsanspruch. Bei über tausend Figuren ist „alle finden“ unmöglich — sag das dem Kind vorher, dann ist jeder Fund ein Gewinn statt einer Restaufgabe.",
+          "Das Kind führt. Wer sucht, bestimmt das Tempo und die Richtung. Genau das macht müde Beine erstaunlich langlebig.",
+          "Nach unten schauen lohnt sich, nach oben auch: Manche kleben an Wänden, sitzen auf Pumpen oder hängen über Türen.",
+          "Winter geht sehr gut. Die Zwerge sind ganzjährig da, der Weihnachtsmarkt auf dem Rynek macht die Pausen leicht — Mütze und dicke Schuhe vorausgesetzt.",
+          "Feste Schuhe: Das Kopfsteinpflaster der Altstadt ist uneben und über Stunden anstrengend."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "Breslau ist die einzige Stadt, in der mein Kind mich durch die Altstadt gezogen hat statt umgekehrt."
+      }
+    ]
+  },
   {
     slug: "danzig-mit-kind",
     title: "Danzig mit Kind: Altstadt, Bernstein und der Strand von Sopot",

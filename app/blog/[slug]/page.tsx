@@ -167,6 +167,24 @@ function Prose({ block }: { block: Block }) {
           )}
         </figure>
       );
+    case "links":
+      return (
+        <ul className="grid gap-2">
+          {block.items.map((it, i) => (
+            <li key={i}>
+              <a
+                href={it.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold underline"
+                style={{ color: theme.magenta }}
+              >
+                {it.label} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
+      );
     case "list":
       return (
         <ul className="ml-5 list-disc space-y-1" style={{ color: theme.muted }}>
