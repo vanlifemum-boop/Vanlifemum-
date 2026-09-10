@@ -24,13 +24,6 @@ export default function KleineFuessePage() {
     >
       <div className="mx-auto max-w-5xl px-6 py-16">
         <header className="space-y-3">
-          <Link
-            href="/"
-            className="text-sm font-semibold"
-            style={{ color: theme.magentaLight }}
-          >
-            ← Zurück
-          </Link>
           <p
             className="text-sm font-bold uppercase tracking-[0.28em]"
             style={{ color: theme.magenta }}
