@@ -1,15 +1,19 @@
 import Link from "next/link";
-import { getPostsByCategory, getDestinationForPost, formatDate } from "@/lib/posts";
+import {
+  getPostsByCategory,
+  getDestinationForPost,
+  formatDate,
+} from "@/lib/posts";
 import { theme } from "@/lib/theme";
 
 export const metadata = {
-  title: "Blog — Vanlife mit Mama & Kind",
+  title: "Mit kleinen Füßen — Vanlifemum",
   description:
-    "Beiträge über das Reisen im Van mit Kind — zu jedem Reiseziel ehrlich aufgeschrieben.",
+    "Geschichten vom Unterwegssein mit Kind: die kleinen Momente, die keinen Reiseführer füllen, aber die Reise ausmachen.",
 };
 
-export default function BlogIndex() {
-  const posts = getPostsByCategory("reise");
+export default function KleineFuessePage() {
+  const posts = getPostsByCategory("kleine-fuesse");
 
   return (
     <main
@@ -31,7 +35,7 @@ export default function BlogIndex() {
             className="text-sm font-bold uppercase tracking-[0.28em]"
             style={{ color: theme.magenta }}
           >
-            Blog
+            Geschichten
           </p>
           <h1
             className="text-4xl font-bold sm:text-5xl"
@@ -40,19 +44,13 @@ export default function BlogIndex() {
               fontFamily: '"Georgia", "Times New Roman", serif',
             }}
           >
-            Mit Kind unterwegs.
+            Mit kleinen Füßen.
           </h1>
           <p className="max-w-2xl" style={{ color: theme.sand }}>
-            Ehrliche Beiträge zu den Reisezielen — was mit Kind funktioniert,
-            was nicht, und was ich beim nächsten Mal anders mache.
+            Keine Stellplätze, keine Öffnungszeiten — hier stehen die kleinen
+            Momente: das erste Mal Meer, der Trotzanfall auf dem Parkplatz, der
+            Stein, der unbedingt mit nach Hause musste.
           </p>
-          <Link
-            href="/mit-kleinen-fuessen"
-            className="inline-block text-sm font-bold"
-            style={{ color: theme.magentaLight }}
-          >
-            👣 Lieber Geschichten? Mit kleinen Füßen →
-          </Link>
         </header>
 
         {posts.length === 0 ? (
@@ -64,7 +62,7 @@ export default function BlogIndex() {
               boxShadow: theme.stickerShadow,
             }}
           >
-            <p className="text-4xl">👩‍👧</p>
+            <p className="text-4xl">👣</p>
             <h2
               className="mt-3 text-2xl font-bold"
               style={{
@@ -72,14 +70,13 @@ export default function BlogIndex() {
                 fontFamily: '"Georgia", "Times New Roman", serif',
               }}
             >
-              Die ersten Beiträge sind in Arbeit.
+              Die erste Geschichte wird gerade aufgeschrieben.
             </h2>
             <p className="mx-auto mt-2 max-w-md" style={{ color: theme.muted }}>
-              Bis dahin findest du alle Orte, über die geschrieben wird, schon
-              bei den Reisezielen.
+              Bis dahin: die Reiseberichte im Blog erzählen schon von den Orten.
             </p>
             <Link
-              href="/ziele"
+              href="/blog"
               className="mt-6 inline-block rounded-full px-6 py-3 text-sm font-bold"
               style={{
                 background: theme.magenta,
@@ -88,7 +85,7 @@ export default function BlogIndex() {
                 boxShadow: theme.stickerShadow,
               }}
             >
-              Reiseziele ansehen →
+              Zu den Reiseberichten →
             </Link>
           </div>
         ) : (
@@ -106,14 +103,12 @@ export default function BlogIndex() {
                     boxShadow: theme.stickerShadow,
                   }}
                 >
-                  {dest && (
-                    <span
-                      className="self-start rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em]"
-                      style={{ background: theme.magenta, color: theme.creme }}
-                    >
-                      {dest.flag} {dest.name}
-                    </span>
-                  )}
+                  <span
+                    className="self-start rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em]"
+                    style={{ background: theme.magenta, color: theme.creme }}
+                  >
+                    👣 {dest ? `${dest.flag} ${dest.name}` : "Mit kleinen Füßen"}
+                  </span>
                   <h2
                     className="text-xl font-bold"
                     style={{
@@ -123,7 +118,10 @@ export default function BlogIndex() {
                   >
                     {post.title}
                   </h2>
-                  <p className="flex-1 text-[0.94rem]" style={{ color: theme.muted }}>
+                  <p
+                    className="flex-1 text-[0.94rem]"
+                    style={{ color: theme.muted }}
+                  >
                     {post.excerpt}
                   </p>
                   <p

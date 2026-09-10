@@ -55,6 +55,19 @@ export default function Home() {
         >
           👩‍👧 Blog: mit Kind
         </Link>
+        <Link
+          href="/mit-kleinen-fuessen"
+          className="rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+          style={{
+            background: theme.creme,
+            color: theme.ink,
+            border: `3px solid ${theme.ink}`,
+            boxShadow: theme.stickerShadow,
+            transitionTimingFunction: theme.ease,
+          }}
+        >
+          👣 Mit kleinen Füßen
+        </Link>
       </section>
 
       <footer className="pt-4 text-sm text-white/40">
