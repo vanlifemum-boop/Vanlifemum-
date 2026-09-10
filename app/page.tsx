@@ -17,7 +17,7 @@ export default function Home() {
           className="text-3xl font-bold sm:text-4xl"
           style={{ fontFamily: '"Georgia", "Times New Roman", serif' }}
         >
-          Ich gehe jetzt leben.
+          Reisen mit Kind — ehrlich erzählt.
         </h1>
         <p className="max-w-2xl text-white/60">
           Scrolle im Rahmen unten durch die Intro-Animation. Darunter geht es zu
