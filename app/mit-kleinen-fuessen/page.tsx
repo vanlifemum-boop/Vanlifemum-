@@ -96,13 +96,22 @@ export default function KleineFuessePage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="dest-card flex flex-col gap-3 rounded-2xl px-6 py-6 no-underline"
+                  className="dest-card flex flex-col gap-3 overflow-hidden rounded-2xl px-6 py-6 no-underline"
                   style={{
                     background: theme.creme,
                     border: `3px solid ${theme.ink}`,
                     boxShadow: theme.stickerShadow,
                   }}
                 >
+                  {post.hero && (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={post.hero.src}
+                      alt={post.hero.alt}
+                      className="-mx-6 -mt-6 mb-1 w-[calc(100%+3rem)] rounded-t-xl object-cover"
+                      style={{ height: 180, borderBottom: `3px solid ${theme.ink}` }}
+                    />
+                  )}
                   <span
                     className="self-start rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em]"
                     style={{ background: theme.magenta, color: theme.creme }}

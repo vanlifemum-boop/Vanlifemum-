@@ -30,8 +30,17 @@ export const CATEGORIES: Record<Category, { label: string; href: string }> = {
   "kleine-fuesse": { label: "Mit kleinen Füßen", href: "/mit-kleinen-fuessen" },
 };
 
+/** Ein Foto. `alt` ist Pflicht — Bildbeschreibung für Screenreader und Google. */
+export interface PostImage {
+  /** Pfad unter public/, z. B. "/bilder/danzig-sopot-strand.jpg" */
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export type Block =
   | { type: "p"; text: string }
+  | { type: "image"; src: string; alt: string; caption?: string }
   | { type: "h2"; text: string }
   | { type: "quote"; text: string }
   | { type: "list"; items: string[] };
@@ -46,6 +55,8 @@ export interface BlogPost {
   destination?: string;
   /** Rubrik; ohne Angabe ein Reisebericht. */
   category?: Category;
+  /** Aufmacherfoto oben im Beitrag und als Vorschau in den Listen. */
+  hero?: PostImage;
   readingMinutes?: number;
   body: Block[];
 }

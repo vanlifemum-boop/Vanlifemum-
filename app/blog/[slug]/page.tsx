@@ -77,6 +77,26 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             {post.readingMinutes ? ` · ${post.readingMinutes} Min. Lesezeit` : ""}
           </p>
 
+          {post.hero && (
+            <figure className="mt-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={post.hero.src}
+                alt={post.hero.alt}
+                className="w-full rounded-xl"
+                style={{ border: `3px solid ${theme.ink}` }}
+              />
+              {post.hero.caption && (
+                <figcaption
+                  className="mt-2 text-sm italic"
+                  style={{ color: theme.muted }}
+                >
+                  {post.hero.caption}
+                </figcaption>
+              )}
+            </figure>
+          )}
+
           <div className="mt-7 flex flex-col gap-4">
             {post.body.map((block, i) => (
               <Prose key={i} block={block} />
@@ -126,6 +146,26 @@ function Prose({ block }: { block: Block }) {
         >
           {block.text}
         </blockquote>
+      );
+    case "image":
+      return (
+        <figure className="my-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={block.src}
+            alt={block.alt}
+            className="w-full rounded-xl"
+            style={{ border: `3px solid ${theme.ink}` }}
+          />
+          {block.caption && (
+            <figcaption
+              className="mt-2 text-sm italic"
+              style={{ color: theme.muted }}
+            >
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
       );
     case "list":
       return (
