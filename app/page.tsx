@@ -20,9 +20,9 @@ export default function Home() {
           Reisen mit Kind — ehrlich erzählt.
         </h1>
         <p className="max-w-2xl text-white/60">
-          Scrolle im Rahmen unten durch die Intro-Animation. Darunter geht es zu
-          den Reisezielen — {DESTINATIONS.length} Orte in Europa, jeweils mit
-          Stellplatz, bester Reisezeit und Tipp.
+          {DESTINATIONS.length} Orte in Europa — jeder mit Stellplatz, bester
+          Reisezeit und persönlichem Tipp. Zu jedem folgt ein Beitrag darüber,
+          wie er sich mit Kind anfühlt.
         </p>
       </header>
 
@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       <footer className="pt-4 text-sm text-white/40">
-        Built with Next.js, Tailwind CSS, and Framer Motion.
+        © Vanlifemum · vanlifemum.de
       </footer>
     </main>
   );
