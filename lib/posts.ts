@@ -40,7 +40,42 @@ export interface BlogPost {
   body: Block[];
 }
 
-export const POSTS: BlogPost[] = [];
+export const POSTS: BlogPost[] = [
+  // Auftakt-Beitrag — gern ersetzen oder löschen, sobald der erste echte
+  // Reisebericht steht. (Mindestens ein Beitrag muss existieren, damit der
+  // statische Export die Route /blog/[slug] erzeugen kann.)
+  {
+    slug: "willkommen",
+    title: "Was dich hier erwartet",
+    date: "2026-09-10",
+    excerpt:
+      "Zu jedem Reiseziel ein Beitrag darüber, wie es sich mit Kind anfühlt — ehrlich, ohne Hochglanz.",
+    readingMinutes: 1,
+    body: [
+      {
+        type: "p",
+        text: "Hier entsteht nach und nach zu jedem Reiseziel ein Beitrag: wie der Ort mit Kind wirklich funktioniert, was wir uns gespart hätten und was wir wieder genauso machen würden.",
+      },
+      { type: "h2", text: "Worum es geht" },
+      {
+        type: "list",
+        items: [
+          "Stellplätze, die mit Kind entspannt sind — und welche nicht",
+          "Was der Tagesablauf unterwegs mit Kind wirklich hergibt",
+          "Ehrliche Einschätzung statt Reiseprospekt",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Reisen mit Kind ist kein kleineres Abenteuer. Nur ein anderes.",
+      },
+      {
+        type: "p",
+        text: "Die Ziele findest du schon jetzt in der Übersicht — die Beiträge kommen Stück für Stück dazu.",
+      },
+    ],
+  },
+];
 
 /** Beiträge, neueste zuerst. */
 export function getPosts(): BlogPost[] {
