@@ -36,8 +36,8 @@ const INK = "#221226";
 
 const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 
-// On-brand words ("Ich gehe jetzt leben!")
-const WORDS = ["LEBEN", "MUT", "FREIHEIT", "JETZT"];
+// Words for the morphing card — Vanlife mit Kind
+const WORDS = ["REISEN", "KIND", "VAN", "FREIHEIT"];
 
 // Glossy sphere background (WowMoman farbmuster.html)
 function glossy(color: string) {
@@ -131,7 +131,7 @@ export default function IntroAnimation() {
             className="absolute -top-3 left-5 rounded-full px-3 py-1 text-[0.6rem] font-bold uppercase tracking-[0.22em]"
             style={{ background: MAGENTA, color: CREME }}
           >
-            WowMoman
+            Vanlifemum
           </span>
 
           <div className="relative flex h-24 w-full items-center justify-center">
